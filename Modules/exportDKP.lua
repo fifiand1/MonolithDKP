@@ -11,7 +11,7 @@ local function GenerateDKPTables(table, format)
 
 	if format == "HTML" then
 		if table == MonDKP_DKPTable then
-			ExportString = "<html>\n<script>\nfunction openTab(tabName) {\n   var i;\n   var x = document.getElementsByClassName(\"tab\");\n   for (i = 0; i < x.length; i++) {\n      x[i].style.display = \"none\";\n   }\n   document.getElementById(tabName).style.display = \"block\";\n}\n</script>\n";
+			ExportString = "<html >\n<head>\n<meta charset="UTF-8">\n<title>带娃老年人2团DKP</title>\n</head>\n<script>\nfunction openTab(tabName) {\n   var i;\n   var x = document.getElementsByClassName(\"tab\");\n   for (i = 0; i < x.length; i++) {\n      x[i].style.display = \"none\";\n   }\n   document.getElementById(tabName).style.display = \"block\";\n}\n</script>\n";
 			ExportString = ExportString.."<script>var whTooltips = {colorLinks: true, iconizeLinks: true, renameLinks: true};</script><script src=\"https://wow.zamimg.com/widgets/power.js\"></script>\n"
 			ExportString = ExportString.."<style>\nhtml { background-color: #000; };\n.divTable{ display: table; float: left; margin: 10px 10px; }\n.divTableRow { display: table-row; background-color: #000}\n.divTableRow:hover { background-color: #222; }\n.divTableHeading { background-color: #EEE; display: table-header-group; }\n.divTableCell, .divTableHead { border: 1px solid #999999; display: table-cell; padding: 3px 10px; }\n";
 			ExportString = ExportString..".divPlayer { border: 1px solid #999999; display: table-cell; width: 700px; padding: 3px 10px; text-align: left; vertical-align: middle; word-wrap: normal; color: #ffffff; }\n.divClass { border: 1px solid #999999; display: table-cell; padding: 3px 10px; text-align: center; vertical-align: middle; color: #ffffff; }\n.divDKP { border: 1px solid #999999; display: table-cell; width: 200px%; padding: 3px 10px; text-align: center; vertical-align: middle; color: #ffffff; }\n"
@@ -54,7 +54,7 @@ local function GenerateDKPTables(table, format)
 			for i=1, numrows do
 				local cur = MonDKP_Loot[i].loot
 				local itemNumber = strsub(cur, string.find(cur, "Hitem:")+6, string.find(cur, ":", string.find(cur, "Hitem:")+6)-1)
-				ExportString = ExportString.."      <div class=\"divTableRow\">\n         <div class=\"divPlayer\" style=\"width: 40%;\"><a href=\"https://classic.wowhead.com/item="..itemNumber.."\" data-wowhead=\"item="..itemNumber.."\"></a> ("..MonDKP_Loot[i].cost.." DKP)</div>\n         <div class=\"divClass\" style=\"width: 20%;\">"..MonDKP_Loot[i].player.."</div>\n         <div class=\"divDKP\" style=\"width: 40%; font-size: 0.7em;\">"..MonDKP_Loot[i].zone..": "..MonDKP_Loot[i].boss.."<br />("..date("%m/%d/%y %H:%M:%S", MonDKP_Loot[i].date)..") </div>\n      </div>\n"
+				ExportString = ExportString.."      <div class=\"divTableRow\">\n         <div class=\"divPlayer\" style=\"width: 40%;\"><a href=\"https://cn.classic.wowhead.com/item="..itemNumber.."\" data-wowhead=\"item="..itemNumber.."\"></a> ("..MonDKP_Loot[i].cost.." DKP)</div>\n         <div class=\"divClass\" style=\"width: 20%;\">"..MonDKP_Loot[i].player.."</div>\n         <div class=\"divDKP\" style=\"width: 40%; font-size: 0.7em;\">"..MonDKP_Loot[i].zone..": "..MonDKP_Loot[i].boss.."<br />("..date("%m/%d/%y %H:%M:%S", MonDKP_Loot[i].date)..") </div>\n      </div>\n"
 			end
 			ExportString = ExportString.."   </div>\n</div>\n</div>\n</html>"
 		end
