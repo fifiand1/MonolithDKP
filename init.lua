@@ -195,7 +195,7 @@ function MonDKP_OnEvent(self, event, arg1, ...)
 		end
 	elseif event == "CHAT_MSG_WHISPER" then
 		MonDKP:CheckOfficer()
-		if (core.BidInProgress or string.find(arg1, "!dkp") == 1 or string.find(arg1, "！dkp") == 1) and core.IsOfficer == true then
+		if (core.BidInProgress or string.find(arg1, "!dkp") == 1 or string.find(arg1, "!bobdsb") == 1) and core.IsOfficer == true then
 			MonDKP_CHAT_MSG_WHISPER(arg1, ...)
 		end
 	elseif event == "GUILD_ROSTER_UPDATE" then
@@ -214,7 +214,7 @@ function MonDKP_OnEvent(self, event, arg1, ...)
 		end
 	elseif event == "CHAT_MSG_RAID" or event == "CHAT_MSG_RAID_LEADER" then
 		MonDKP:CheckOfficer()
-		if (core.BidInProgress or string.find(arg1, "!dkp") == 1 or string.find(arg1, "！dkp") == 1) and core.IsOfficer == true then
+		if (core.BidInProgress or string.find(arg1, "!dkp") == 1 or string.find(arg1, "!bobdsb") == 1) and core.IsOfficer == true then
 			MonDKP_CHAT_MSG_WHISPER(arg1, ...)
 		end
 	elseif event == "UPDATE_INSTANCE_INFO" then
@@ -268,7 +268,7 @@ function MonDKP_OnEvent(self, event, arg1, ...)
 		self:UnregisterEvent("UPDATE_INSTANCE_INFO");
 	elseif event == "CHAT_MSG_GUILD" then
 		MonDKP:CheckOfficer()
-		if (core.BidInProgress or string.find(arg1, "!dkp") == 1 or string.find(arg1, "！dkp") == 1) and core.IsOfficer == true then
+		if (core.BidInProgress or string.find(arg1, "!dkp") == 1 or string.find(arg1, "!bobdsb") == 1) and core.IsOfficer == true then
 			MonDKP_CHAT_MSG_WHISPER(arg1, ...)
 		end
 	--elseif event == "CHAT_MSG_SYSTEM" then
