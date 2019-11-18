@@ -14,9 +14,9 @@ local LibCompress = LibStub:GetLibrary("LibCompress")
 local LibCompressAddonEncodeTable = LibCompress:GetAddonEncodeTable()
 
 function MonDKP:ValidateSender(sender)								-- returns true if "sender" has permission to write officer notes. false if not or not found.
-	if MonDKP:GetGuildRankIndex(UnitName("player")) == 1 then       -- automatically gives permissions above all settings if player is guild leader
-		return true;
-    end
+	--if MonDKP:GetGuildRankIndex(UnitName("player")) == 1 then       -- automatically gives permissions above all settings if player is guild leader
+	--	return true;
+    --end
 	if #MonDKP_Whitelist > 0 then									-- if a whitelist exists, checks that rather than officer note permissions
 		for i=1, #MonDKP_Whitelist do
 			if MonDKP_Whitelist[i] == sender then
